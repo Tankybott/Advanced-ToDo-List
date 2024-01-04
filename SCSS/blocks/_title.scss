@@ -1,0 +1,14 @@
+@use '../colors' as c;
+
+.title {
+    font-size: 3rem;
+    padding: 1.6rem;
+    background-color: c.$blue;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 5rem;
+        padding: 1.3rem
+    }
+}

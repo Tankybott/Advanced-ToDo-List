@@ -1,0 +1,70 @@
+@use '../colors' as c;
+
+.counter {
+    display: flex;
+    font-size: 2rem;
+
+    &__block {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: calc(100%/3);
+        background-color: c.$blue;
+        min-height: 115px;
+        
+        &:nth-of-type(odd) {
+            background-color: c.$lightBlue;
+        }
+    }
+
+    &__number {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    &__number-description {
+        position: absolute;
+        bottom: 10%;
+        font-size: 0.7em;
+        text-transform: uppercase;
+    }
+}
+
+@media (min-width: 768px){
+    .counter {
+        &__block {
+            min-height: 165px;
+        }
+
+        &__number {
+            font-size: 2em;
+        }
+
+        &__number-description {
+            font-size: 1em;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    @media (orientation: landscape) {
+        .counter {
+            &__block {
+                min-height: 150px;
+            }
+
+            
+            &__number {
+                font-size: 1.6em;
+            }
+    
+            &__number-description {
+                font-size: .6em;
+                bottom: 13%;
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="title-container">
+        <h1 class="title">ToDo List</h1>
+      </div>
+
+      <div class="add-panel-container">
+        <form action="" class="add-panel main__add-panel">
+          <input
+            type="text"
+            class="add-panel__input"
+            placeholder="Enter task..."
+            name="add-panel-input"
+          />
+          <input
+            type="checkbox"
+            class="add-panel__radio global-radio"
+            id="add-panel__radio"
+          />
+          <label class="add-panel__label" for="add-panel__radio"
+            >Check if important</label
+          >
+          <button class="add-panel__button">Add task</button>
+        </form>
+      </div>
+
+      <div class="counter-container">
+        <div class="counter">
+          <div class="counter__block">
+            <p class="counter__number" data-numberType="inprogress">0</p>
+            <h6 class="counter__number-description">in progress</h6>
+          </div>
+
+          <div class="counter__block">
+            <p class="counter__number" data-numberType="important">0</p>
+            <h6 class="counter__number-description">important</h6>
+          </div>
+
+          <div class="counter__block">
+            <p class="counter__number" data-numberType="all">0</p>
+            <h6 class="counter__number-description">all</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-panel-container">
+        <form
+          action=""
+          class="search-panel main__search-panel"
+          name="search-panel-input"
+        >
+          <input
+            type="text"
+            class="search-panel__input"
+            name="search-panel-input"
+            placeholder="Search for task..."
+          />
+          <h4 class="search-panel__option">State of progress</h4>
+          <select
+            name="search-panel__select"
+            id="search-panel__select"
+            class="search-panel__select"
+          >
+            <option value="all">All</option>
+            <option value="inProgress">In progress</option>
+            <option value="done">Done</option>
+          </select>
+        </form>
+      </div>
+
+      <div class="todo-list-container">
+        <div class="todo-list todo-list-main">
+          <p class="todo-list__console">List is empty</p>
+          <ul class="todo-list__list"></ul>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./JS/main.js"></script>
+  </body>
+</html>

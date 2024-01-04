@@ -1,0 +1,74 @@
+@use '../mixins' as m;
+@use '../colors' as c;
+
+.add-panel {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    padding: 2rem 2rem;
+    background-color: c.$light;
+    justify-content: center;
+
+    &__input {
+        width: 100%;
+        font-size: 1.5em;
+        padding: 0.5em;
+        margin-bottom: 2rem;
+        @include m.input;
+
+        &:focus {
+            outline: none;
+            @include m.inputActive(c.$blue);
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-self: center;
+        width: 80%;
+        font-size: 1.5em;
+        margin-left: .5rem;
+        font-weight: bold;
+
+    }
+
+    &__button {
+        width: 80%;
+        padding: 1rem;
+        font-size: 1.6em;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        @include m.button(c.$blue);
+
+        &:hover {
+            @include m.buttonHover(c.$lightBlue, c.$blue);
+            
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    .add-panel {
+        &__label {
+            font-size: 1.7em;
+        }
+
+        &__input {
+            font-size: 2em;
+            padding: 0.7rem 2rem;
+        }
+    }
+}
+
+@media(min-width: 992px) {
+    @media (orientation: landscape) {
+        .add-panel {
+            &__button {
+                padding: 0;
+                width: 60%;
+                border-radius: 15px;
+            }
+        }
+    }
+}

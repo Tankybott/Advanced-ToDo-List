@@ -1,0 +1,140 @@
+@use 'index' as i;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+
+
+.main{
+    display: grid;
+    grid-template-rows: repeat(4, auto) 1fr;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    background-color: i.$light;
+    max-width: 100%;
+}
+
+
+
+//CONTAINERS
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+.title-container {
+    grid-area: 1/1/2/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: i.$blue;
+    border-bottom: 2px solid i.$blue;
+}
+
+.add-panel-container {
+    grid-area: 2/1/3/2;
+}
+
+.counter-container {
+    grid-area: 3/1/4/2;
+    border: 2px solid i.$blue;
+}
+
+.search-panel-container {
+    grid-area: 4/1/5/2;
+    margin-top: 1rem;
+    
+}
+
+.todo-list-container {
+    padding: 1.2rem;
+    background-color: i.$light;
+    grid-area: 5/1/6/2;
+}
+
+
+//MEDIA QUERIES 
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+@media (min-width: 768px) {
+
+    //Elements width-height 
+    .main {
+
+        &__add-panel {
+            width: 85%;
+        }
+
+        &__search-panel {
+            width: 85%;
+        }
+    }
+    
+    //CONTAINERS
+    .add-panel-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .search-panel-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .counter-container {
+        margin: 2.5rem 0;
+    }
+
+    @media (orientation: landscape) {
+        .main {
+            grid-template-rows: 20vh 40vh auto 1fr;
+        } 
+    }
+}
+
+@media(min-width: 992px) {
+    @media (orientation: landscape) {
+        html {
+            overflow-y: scroll;
+        }
+
+        .main{
+            display: grid;
+            grid-template-rows: 15vh 20vh 10vh min-content auto;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .title-container {
+            grid-area: 1/1/2/6;
+        }
+        
+        .add-panel-container {
+            grid-area: 2/4/4/6;
+            margin-right: 1rem;
+        }
+        
+        .counter-container {
+            grid-area: 4/4/5/6;
+            margin-right: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .search-panel-container {
+            grid-area: 2/1/3/4;
+            margin-top: 3rem;
+        }
+        
+        .todo-list-container {
+            grid-area: 3/1/6/4;
+        }
+    }
+}
